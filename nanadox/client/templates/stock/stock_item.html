@@ -1,0 +1,26 @@
+<template name="stockItem">
+<tr>	
+		<td><div data-tooltip="{{LotID}}" data-inverted="">
+		<a href="{{pathFor 'stockEdit'}}" >
+		{{#if LotID ="test2"}}
+			<a class="ui red ribbon label">Loading</a>
+		{{else}}
+			<a class="ui green ribbon label">Loading</a>
+		{{/if}}
+		{{LotID}}
+		</a></div></td>
+		<td>{{Name}}</td>
+		<td>{{Amount}}</td>
+		<td>{{comment}}</td>
+		<td>{{submitted}}</td>
+		<td class="positive"><i class="icon checkmark"></i> Approved</td>
+		<td>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
+			
+
+  
+		</td>
+		</tr>
+</template>
+
+

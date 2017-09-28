@@ -1,0 +1,60 @@
+<template name="stocklist">
+  <div class="posts page">
+  	
+  <div class="container">
+    <h1 class="display-3">Stock Card</h1>
+  </div>
+
+  <!-- Button trigger modal -->
+
+{{>showlist}}
+
+{{#if showModal}}
+    test
+
+{{/if}}
+
+  	<table class="ui celled striped selectable  inverted table">
+  	<thead>
+    <tr>
+    	<th>Lot Number</th>
+    <th>Product</th>
+    <th>Package</th>
+    <th>In stock</th>
+    <th>Loaded</th>
+    <th>Customer</th>
+    <th>Laboratory</th>
+    <th>QR Code</th>
+  </tr></thead>
+	<tbody>
+    {{#each stocks}}
+		<tr>	
+		<td><div data-tooltip="{{LotID}}" data-inverted="">
+		<a href="{{pathFor 'stockEdit'}}" >
+		{{#if equals Status "loading"}}
+			<a class="ui red ribbon label"><h4>Loading {{LotID}}</h4></a>
+		{{else if equals Status "process"}}
+			<a class="ui green ribbon label"><h4>Process {{LotID}}</h4></a>
+		{{else}}
+			{{LotID}}
+		{{/if}}
+
+		</a></div></td>
+		<td>{{Name}}</td>
+		<td>1000 KG</td>
+		<td>{{Remain}}</td>
+		<td>0</td>
+		<td>customer</td>
+		<td ><a href="{{pathFor 'qrcodelist' Start='1' End='20' }}" ><i class="icon checkmark"></i> Pass</a></td>
+		<td>
+			<a class='text-warning qrcodeModal' href="#qrcodeModal" data-toggle="modal">QRCode</a>
+			
+
+  
+		</td>
+		</tr>    {{/each}}
+	</tbody>
+	</table>
+	
+ </div>
+</template>

@@ -1,0 +1,34 @@
+<template name="stockSubmit">
+  <form class="main form page">
+
+    <div class="form-group {{errorClass 'LotID'}}">
+      <label class="control-label" for="LotID">LotID</label>
+      <div class="controls">
+          <input name="LotID" id="LotID" type="text" value="" placeholder="Your Lot" class="form-control"/>
+          <span class="help-block">{{errorMessage 'LotID'}}</span>
+      </div>
+    </div>
+    <div class="form-group {{errorClass 'Name'}}">
+      <label class="control-label" for="Name">Name</label>
+      <div class="controls">
+          <input name="Name" id="Name" type="text" value="" placeholder="Name your product" class="form-control"/>
+          <span class="help-block">{{errorMessage 'Name'}}</span>
+      </div>
+    </div>
+    <div class="form-group {{errorClass 'Package'}}">
+      <label class="control-label" for="Package">Package</label>
+      <div class="controls">
+          <input name="Package" id="Package" type="text" value="" placeholder="Insert your package size" class="form-control"/>
+          <span class="help-block">{{errorMessage 'Package'}}</span>
+      </div>
+    </div>
+    <div class="form-group {{errorClass 'Remain'}}">
+      <label class="control-label" for="Remain">Remain</label>
+      <div class="controls">
+          <input name="Remain" id="Remain" type="text" value="" placeholder="Amount" class="form-control"/>
+          <span class="help-block">{{errorMessage 'Remain'}}</span>
+      </div>
+    </div>
+    <input type="submit" value="Submit" class="btn btn-primary"/>
+  </form>
+</template>

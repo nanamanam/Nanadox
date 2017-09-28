@@ -1,0 +1,11 @@
+<template name="stockPage">
+  <div class="post-page page">
+    {{> stockItem}}
+    <ul class="comments">
+      {{#each comments}}
+        {{commentItem}}
+      {{/each}}
+    </ul>
+	
+  </div>
+</template>

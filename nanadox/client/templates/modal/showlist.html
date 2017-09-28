@@ -1,0 +1,45 @@
+<template name="showlist">
+  <div class="posts page">
+
+  <!-- Button trigger modal -->
+
+<!-- Modal -->
+
+<div class="modal fade" id="qrcodeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form class="myclass">
+      <div class="modal-body">
+        
+  
+         <img src='https://chart.googleapis.com/chart?cht=qr&chl=http://192.168.1.40:3000/stock/edit/{{qrinfo._id}}&chs=250x250&chld=H|0'>
+        
+      
+          <div class="form-group">
+            <label for="recipient-name" class="form-control-label">Start</label>
+            <input type="text" class="form-control" name='start' id="recipient-name" placeholder="{{qrinfo.LotID}}">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="form-control-label">End</label>
+            <textarea class="form-control" name='end' id="message-text" placeholder="{{qrinfo.Name}}"></textarea>
+          </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <input type="submit" Values="Generate QRCode" class="btn btn-primary"/>
+      
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+ </div>
+</template>
